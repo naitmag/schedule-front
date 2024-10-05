@@ -24,20 +24,27 @@
     Расписание занятий
 </div>
 
-<div class="schedule-info">
+<div class="schedule-control">
+    <div id="group-notification" class="notification" >
+        <p class="alert"><h4>Вы просматриваете расписание другой группы!</h4></p>
+    </div>
     <div class="group-info">
-        <strong>Группа:</strong> <span id="group-name">Группа A</span>
-        <div id="notification" style="color: red; display: none;">Вы просматриваете расписание не своей группы!</div>
+        <span>Расписание для группы: <strong>Группа 123</strong></span>
     </div>
+    <div class="week-info">
+        <span>Учебная неделя: <strong id="current-week">1</strong></span>
+    </div>
+
     <div class="week-controls">
-        <strong>Учебная неделя:</strong> <span id="current-week">1</span>
-        <button onclick="changeWeek(-1)">&#8249; Предыдущая неделя</button>
-        <button onclick="changeWeek(1)">Следующая неделя &#8250;</button>
-        <button onclick="goToCurrentWeek()">Текущая неделя</button>
-        <input type="number" id="week-input" placeholder="Номер недели" min="1">
-        <button onclick="goToWeek()">Перейти</button>
+        <button id="prev-week" class="btn">Предыдущая неделя</button>
+        <button id="current-week-btn" class="btn" >Текущая неделя</button>
+        <button id="next-week" class="btn">Следующая неделя</button>
+        <input type="number" id="week-input" placeholder="№" />
+        <button id="go-week" class="btn">Перейти</button>
     </div>
+
 </div>
+
 
 <!-- Основной блок с карточками расписания -->
 <div class="schedule-container">
@@ -190,5 +197,65 @@
 <div class="footer">
     &copy; 2024 Все права защищены
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const prevWeekButton = document.getElementById("prev-week");
+        const nextWeekButton = document.getElementById("next-week");
+        const currentWeekButton = document.getElementById("current-week-btn");
+        const weekInput = document.getElementById("week-input");
+        const submitWeekButton = document.getElementById("submit-week");
+        const groupNotification = document.getElementById("group-notification");
+        const currentWeekDisplay = document.getElementById("current-week");
+
+        // Изначально задаем номер учебной недели
+        let currentWeek = 1; // начальное значение
+        const userGroup = "Ваша группа"; // Замените на название вашей группы
+        const displayedGroup = "Другая группа"; // Замените на группу, для которой показывается расписание
+
+        // Функция для обновления отображаемого номера недели
+        function updateWeekDisplay() {
+            currentWeekDisplay.textContent = currentWeek;
+
+            // Показ уведомления, если показывается не ваша группа
+            if (displayedGroup !== userGroup) {
+                groupNotification.style.display = "inline";
+            } else {
+                groupNotification.style.display = "none";
+            }
+
+
+        }
+
+        // Обработчики событий для кнопок
+        prevWeekButton.addEventListener("click", function () {
+            if (currentWeek > 1) {
+                currentWeek--;
+                updateWeekDisplay();
+            }
+        });
+
+        nextWeekButton.addEventListener("click", function () {
+            currentWeek++;
+            updateWeekDisplay();
+        });
+
+        currentWeekButton.addEventListener("click", function () {
+            currentWeek = 1; // возвращаемся к текущей неделе
+            updateWeekDisplay();
+        });
+
+        submitWeekButton.addEventListener("click", function () {
+            const inputWeek = parseInt(weekInput.value, 10);
+            if (inputWeek > 0) {
+                currentWeek = inputWeek;
+                updateWeekDisplay();
+            }
+        });
+
+        // Инициализация отображения
+        updateWeekDisplay();
+    });
+
+</script>
 </body>
 </html>

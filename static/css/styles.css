@@ -106,12 +106,7 @@
             margin-bottom: 40px;
             color: #666;
         }
-        .group-info {
-            text-align: center;
-            margin: 20px 0;
-         font-size: 18px;
-            font-weight: bold;
-        }
+
         .lesson-card {
             background-color: #ffffff;
             border-radius: 10px;
@@ -468,39 +463,80 @@
 }
 
 
-              /* Пагинатор */
-        .pagination {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px; /* Увеличенные отступы */
-            margin: 70px auto 20px auto; /* Центрирование и отступы */
-            display: flex;
-            justify-content: center; /* Центрирование содержимого */
-            align-items: center;
-            gap: 15px; /* Отступы между кнопками */
-            width: fit-content; /* Уменьшение ширины блока */
-        }
-        .pagination button {
-            padding: 10px 15px; /* Увеличенные отступы */
-            font-size: 14px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #90be6d; /* Зелёный цвет кнопок */
-            color: white;
-            transition: background 0.3s;
-        }
-        .pagination button:hover {
-            background-color: #1d3557; /* Цвет при наведении */
-        }
-        .current-week {
-            font-size: 18px;
-            padding: 10px 15px; /* Увеличенные отступы */
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+
+.schedule-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9; /* Цвет фона блока */
+    padding: 20px; /* Внутренний отступ */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень блока */
+    margin-bottom: 20px; /* Отступ снизу для отделения от других блоков */
+    margin-top: 45px; /* Отступ снизу для отделения от других блоков */
+}
+
+.notification {
+    background-color: #e0e0e0; /* Цвет фона для уведомления */
+    padding: 10px; /* Внутренний отступ для уведомления */
+    margin-bottom: 10px; /* Отступ снизу уведомления */
+    border-radius: 5px; /* Скругление углов уведомления */
+    width: 100%; /* Ширина уведомления */
+    position: relative; /* Для позиционирования при необходимости */
+    text-align: center; /* Центрирование текста */
+}
+
+.group-info, .week-info {
+    margin: 10px 0; /* Отступ сверху и снизу для информации о группе и неделе */
+    font-size: 18px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+}
+
+.week-controls {
+    display: flex; /* Выравнивание кнопок в одну строку */
+    align-items: center; /* Центрирование кнопок по вертикали */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+}
+
+.btn {
+    background-color: #90be6d; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    padding: 10px 15px; /* Внутренние отступы кнопки */
+    margin: 5px; /* Отступы между кнопками */
+    border-radius: 5px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель курсора на кнопках */
+    transition: background-color 0.3s; /* Плавный переход цвета при наведении */
+}
+
+.btn-current {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    padding: 10px 15px; /* Внутренние отступы кнопки */
+    margin: 5px; /* Отступы между кнопками */
+    border-radius: 5px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель курсора на кнопках */
+    transition: background-color 0.3s; /* Плавный переход цвета при наведении */
+}
+
+.btn:hover {
+    background-color: #78a659;` /* Цвет кнопки при наведении */
+}
+
+.hidden {
+    display: none; /* Скрытие элемента */
+}
+
+input[type="number"] {
+    width: 60px; /* Ширина поля ввода */
+    margin-left: 10px; /* Отступ слева для отделения от кнопки */
+    padding: 5px; /* Внутренний отступ для поля ввода */
+    border: 1px solid #ccc; /* Рамка вокруг поля ввода */
+    border-radius: 5px; /* Скругление углов поля ввода */
+    font-size: 16px; /* Размер шрифта в поле ввода */
+}
+
         /* Карточки расписания */
         .schedule-container {
             display: grid;
