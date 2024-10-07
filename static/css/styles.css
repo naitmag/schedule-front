@@ -509,15 +509,26 @@
     transition: background-color 0.3s; /* Плавный переход цвета при наведении */
 }
 
-.btn-current {
-    background-color: #007bff; /* Цвет фона кнопки */
-    color: white; /* Цвет текста кнопки */
-    border: none; /* Убираем рамку */
-    padding: 10px 15px; /* Внутренние отступы кнопки */
-    margin: 5px; /* Отступы между кнопками */
-    border-radius: 5px; /* Скругление углов кнопки */
-    cursor: pointer; /* Указатель курсора на кнопках */
-    transition: background-color 0.3s; /* Плавный переход цвета при наведении */
+.btn-current-week {
+    background-color: #90be6d; /* Основной цвет кнопки */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Стиль при наведении для активной кнопки */
+.btn-current-week:hover {
+    background-color: #6fa355; /* Темнее при наведении */
+}
+
+/* Стиль неактивной кнопки */
+.btn-current-week.disabled {
+    background-color: #d3d3d3; /* Серый цвет для неактивной кнопки */
+    cursor: not-allowed; /* Изменяем курсор */
 }
 
 .btn:hover {
