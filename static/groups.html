@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор группы</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<!-- Выезжающее меню -->
+<div class="sidebar" id="sidebar">
+    <a href="index.html">Главная</a>
+    <a href="login.html">Вход</a>
+    <a href="profile.html">Личный кабинет</a>
+    <a href="schedule.html">Расписание</a>
+    <a href="teacher.html">Преподаватели</a>
+</div>
+
+<!-- Верхняя панель с иконкой меню -->
+<div class="header">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    Выбор группы
+</div>
+
+<!-- Основной контент -->
+<div class="main-content">
+    <h1 class="page-title">Выберите группу</h1>
+    <p class="main-description">Всего групп:</p>
+    <div class="profile-group-cards-container">
+  <div class="profile-group-card">
+    <a href="/group/101" class="card-content">
+      <h2 class="group-title">Группа 101</h2>
+      <p class="group-info">Специальность: Компьютерные науки</p>
+      <p class="group-info">Количество студентов: 30</p>
+    </a>
+    <a href="/schedule/101" class="schedule-button" style="background-color: var(--random-color);">Просмотреть расписание</a>
+  </div>
+
+  <div class="profile-group-card">
+    <a href="/group/102" class="card-content">
+      <h2 class="group-title">Группа 102</h2>
+      <p class="group-info">Специальность: Информационные технологии</p>
+      <p class="group-info">Количество студентов: 25</p>
+    </a>
+    <a href="/schedule/102" class="schedule-button" style="background-color: var(--random-color);">Просмотреть расписание</a>
+  </div>
+
+  <div class="profile-group-card">
+    <a href="/group/103" class="card-content">
+      <h2 class="group-title">Группа 103</h2>
+      <p class="group-info">Специальность: Программная инженерия</p>
+      <p class="group-info">Количество студентов: 28</p>
+    </a>
+    <a href="/schedule/103" class="schedule-button" style="background-color: var(--random-color);">Просмотреть расписание</a>
+  </div>
+</div>
+
+
+</div>
+
+
+<!-- Футер -->
+<div class="footer">
+    &copy; 2024 Все права защищены
+</div>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
