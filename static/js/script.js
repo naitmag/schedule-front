@@ -9,45 +9,18 @@ function toggleMenu() {
         document.body.style.marginLeft = isOpen ? '0' : '250px'; // Сдвигаем контент
     }
 
-// Примерный код для смены недели
-let currentWeek = 1;
-const totalWeeks = 16; // Общее количество недель
+let currentWeek = 1
+    let weekOnPage = 4; // Начальная неделя
 
-function changeWeek(direction) {
-    currentWeek += direction;
-    if (currentWeek < 1) currentWeek = 1; // Проверка на минимальное значение
-    if (currentWeek > totalWeeks) currentWeek = totalWeeks; // Проверка на максимальное значение
-    updateWeekDisplay();
-}
+    // Функция для изменения учебной недели
+    function changeWeek(direction) {
+        weekOnPage += direction;
+        document.getElementById('current-week').innerText = `Неделя ${weekOnPage} (23.09 - 29.09)`; // Обновление текста с номером недели и датами
 
-function goToCurrentWeek() {
-    currentWeek = getCurrentWeek(); // Функция для получения текущей недели
-    updateWeekDisplay();
-}
-
-function goToWeek() {
-    const weekInput = document.getElementById('week-input').value;
-    if (weekInput >= 1 && weekInput <= totalWeeks) {
-        currentWeek = weekInput;
-        updateWeekDisplay();
-    } else {
-        alert('Недопустимый номер недели');
+        // Проверка на текущую неделю
+        if (weekOnPage !== currentWeek) {
+            document.getElementById('nearest-week').style.display = 'inline-block';
+        } else {
+            document.getElementById('nearest-week').style.display = 'none';
+        }
     }
-}
-
-function updateWeekDisplay() {
-    document.getElementById('current-week').textContent = currentWeek;
-    // Здесь можно обновить расписание в зависимости от текущей недели
-}
-
-function toggleMenu() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-}
-
-// Функция для получения текущей недели
-function getCurrentWeek() {
-    const today = new Date();
-    // Ваши условия для определения текущей недели
-    return Math.ceil(today.getDate() / 7); // Примерная логика, можно заменить
-}
