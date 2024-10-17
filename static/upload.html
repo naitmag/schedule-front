@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<!-- Выезжающее меню -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="login.html">Вход</a></li>
+        <li><a href="profile.html">Личный кабинет</a></li>
+        <li><a href="schedule.html">Расписание</a></li>
+        <li><a href="teacher.html">Преподаватели</a></li>
+    </ul>
+</nav>
+
+<!-- Верхняя панель с иконкой меню -->
+<div class="header">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    Главная страница
+</div>
+
+<!-- Основной блок с содержимым -->
+<div class="main-content">
+    <h1 class="main-title"></h1>
+    <p class="main-description"></p>
+
+    <div class="main-content-login">
+
+        <div class="register-container">
+            <h1>Загрузка занятий</h1>
+            <form id="register-form" action="#" method="post">
+                <div class="input-group-register">
+                    <label for="file">Выберите .xlsx файл с занятиями</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+                <button type="submit" id="register-button" class="register-button active">Загрузить</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- Футер -->
+<div class="footer">
+    &copy; 2024 Все права защищены
+</div>
+
+</body>
+</html>

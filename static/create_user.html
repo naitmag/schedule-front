@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/registration.js" defer></script>
+
+</head>
+<body>
+
+<!-- Выезжающее меню -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="login.html">Вход</a></li>
+        <li><a href="profile.html">Личный кабинет</a></li>
+        <li><a href="schedule.html">Расписание</a></li>
+        <li><a href="teacher.html">Преподаватели</a></li>
+    </ul>
+</nav>
+
+<!-- Верхняя панель с иконкой меню -->
+<div class="header">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    Главная страница
+</div>
+<!-- Основной блок с содержимым -->
+<div class="main-content-login">
+    <div class="register-container">
+        <h1>Регистрация пользователя</h1>
+        <form id="register-form" action="#" method="post">
+            <div class="input-pair">
+                <div class="input-group-register">
+                    <label for="last-name">Фамилия*</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="input-group-register">
+                    <label for="first-name">Имя*</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+            </div>
+            <div class="input-pair">
+                <div class="input-group-register">
+                    <label for="middle-name">Отчество</label>
+                    <input type="text" id="middle-name" name="middle-name">
+                </div>
+                <div class="input-group-register">
+                    <label for="email">Адрес электронной почты*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="input-group-register">
+                <label for="group">Группа*</label>
+                <select id="group" name="group" required>
+                    <option value="">Выберите группу</option>
+                    <option value="group1">Группа 1</option>
+                    <option value="group2">Группа 2</option>
+                    <option value="group3">Группа 3</option>
+                </select>
+            </div>
+            <button type="submit" id="register-button" class="register-button">Зарегистрироваться</button>
+        </form>
+        <div id="validation-message" class="validation-message"></div>
+    </div>
+</div>
+
+<!-- Футер -->
+<div class="footer">
+    &copy; 2024 Все права защищены
+</div>
+
+</body>
+</html>
