@@ -939,17 +939,6 @@ white-space: nowrap;
             justify-content: space-between;
         }
 
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Центрирование галочки */
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .checkbox-group input {
-            margin-right: 10px;
-        }
 
         .register-button {
             width: 100%;

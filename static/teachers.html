@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор группы</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<!-- Выезжающее меню -->
+<div class="sidebar" id="sidebar">
+    <a href="index.html">Главная</a>
+    <a href="login.html">Вход</a>
+    <a href="profile.html">Личный кабинет</a>
+    <a href="schedule.html">Расписание</a>
+    <a href="teacher.html">Преподаватели</a>
+</div>
+
+<!-- Верхняя панель с иконкой меню -->
+<div class="header">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    Выбор группы
+</div>
+
+<!-- Основной контент -->
+<div class="main-content">
+    <div align="center">
+        <div class="register-container">
+            <h3>Не нашли преподавателя?</h3>
+            <p>Получите расписание для преподавателя, которого нет в системе.</p>
+            <form id="register-form" action="#" method="post">
+                <div class="input-group-register">
+                    <input type="text" id="teacher" name="teacher" required>
+                </div>
+                <button type="submit" id="register-button" class="register-button active">Перейти к расписанию</button>
+            </form>
+        </div>
+    </div>
+    <h1 class="page-title">Список преподавателей</h1>
+    <p class="main-description">Всего преподавателей:</p>
+    <div class="profile-group-cards-container">
+        <div class="profile-group-card">
+            <a href="/group/101" class="card-content">
+                <h2 class="group-title">Иванов А.А</h2>
+                <p class="group-info">Кафедра: Компьютерные науки</p>
+                <p class="group-info">Факультет: ПОИТ</p>
+            </a>
+            <a href="/schedule/101" class="schedule-button" style="background-color: var(--random-color);">Просмотреть
+                расписание</a>
+        </div>
+
+        <div class="profile-group-card">
+            <a href="/group/102" class="card-content">
+                <h2 class="group-title">Соколов И.И.</h2>
+                <p class="group-info">Кафедра: Информационные технологии</p>
+                <p class="group-info">Факультет: ПОИТ</p>
+            </a>
+            <a href="/schedule/102" class="schedule-button" style="background-color: var(--random-color);">Просмотреть
+                расписание</a>
+        </div>
+
+        <div class="profile-group-card">
+            <a href="/group/103" class="card-content">
+                <h2 class="group-title">Соловьев Н.Н.</h2>
+                <p class="group-info">Кафедра: Программная инженерия</p>
+                <p class="group-info">Факультет: ПОИТ</p>
+            </a>
+            <a href="/schedule/103" class="schedule-button" style="background-color: var(--random-color);">Просмотреть
+                расписание</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Футер -->
+<div class="footer">
+    &copy; 2024 Все права защищены
+</div>
+
+
+</body>
+</html>
